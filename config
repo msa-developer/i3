@@ -38,11 +38,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 #wallpaper
-<<<<<<< HEAD
 exec --no-startup-id feh --bg-scale /home/man/.config/i3/bridge.jpg
-=======
-exec --no-startup-id feh --bg-scale /home/man/Pictures/ocean.png
->>>>>>> c1055418c9ed32dfff0cba4bdb85c5d52185d8f4
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -70,11 +66,7 @@ bindsym $mod+o exec --no-startup-id dmenu_run
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-<<<<<<< HEAD
-# Full screen screenshot saved in ~/Pictures/ScreenShots with timestamp filename (screenshot shot tool is miam)
-=======
 # Full screen screenshot saved in ~/Pictures/ScreenShots with timestamp filename
->>>>>>> c1055418c9ed32dfff0cba4bdb85c5d52185d8f4
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/ScreenShots-$(date -u +'%Y%m%d-%H%M%S').png"
 
 # Active window screenshot saved in ~/Pictures/ScreenShots
