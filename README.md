@@ -1,6 +1,6 @@
 # i3
 
-![i3](./bridge.jpg)
+![i3](./i3Window.png)
 
 ### For Disabling Screen Tearing For amdgpu only `/etc/X11/xorg.conf.d/20-amdgpu.conf `
 
