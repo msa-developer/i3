@@ -46,6 +46,17 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+#decreasing the volume with keyboard keybindings
+# Increase volume with $mod+p
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Decrease volume with $mod+Shift+p
+bindsym $mod+Shift+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Mute/unmute speakers with $mod+m
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -111,8 +122,8 @@ bindsym $mod+Shift+Right move right
 # split in horizontal orientation
 # bindsym $mod+h split h
 #setting brightnessctl 
-bindsym $mod+b exec brightnessctl set +1%
-bindsym $mod+Shift+b exec brightnessctl set 1%-
+bindsym $mod+b exec brightnessctl set +5%
+bindsym $mod+Shift+b exec brightnessctl set 5%-
 
 # split in vertical orientation
 bindsym $mod+v split v
