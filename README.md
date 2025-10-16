@@ -16,9 +16,14 @@ EndSection
 
 ```
 Section "InputClass"
-  Identifier "touchpad"
-  MatchIsTouchpad "on"
-  Driver "libinput"
-  Option "Tapping" "on"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "NaturalScrolling" "true"
+    Option "TappingButtonMap" "lmr"
+    Option "ScrollMethod" "twofinger"
+    Option "ClickMethod" "clickfinger"
 EndSection
+
 ```
