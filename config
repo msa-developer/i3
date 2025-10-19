@@ -78,13 +78,13 @@ bindsym $mod+o exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 # Full screen screenshot saved in ~/Pictures/ScreenShots with timestamp filename
-bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S').png"
+bindsym $mod+y exec --no-startup-id maim --format=png "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S').png"
 
 # Active window screenshot saved in ~/Pictures/ScreenShots
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S')-window.png"
+bindsym $mod+Shift+w exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S')-window.png"
 
 # Selected region screenshot saved in ~/Pictures/ScreenShots
-bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S')-select.png"
+bindsym $mod+Shift+y exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/ScreenShots/-$(date +'%Y-%m-%d_%H-%M-%S')-select.png"
 
 # Copy full screen screenshot to clipboard (no file saved)
 bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
