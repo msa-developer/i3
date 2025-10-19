@@ -78,13 +78,13 @@ bindsym $mod+o exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 # Full screen screenshot saved in ~/Pictures/ScreenShots with timestamp filename
-bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/ScreenShots-$(date -u +'%Y%m%d-%H%M%S').png"
+bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/ScreenShots/-$(date -u +'%Y%m%d-%H%M%S').png"
 
 # Active window screenshot saved in ~/Pictures/ScreenShots
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/ScreenShots-$(date -u +'%Y%m%d-%H%M%S')-window.png"
+bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/ScreenShots/-$(date -u +'%Y%m%d-%H%M%S')-window.png"
 
 # Selected region screenshot saved in ~/Pictures/ScreenShots
-bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/ScreenShots-$(date -u +'%Y%m%d-%H%M%S')-select.png"
+bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/ScreenShots/-$(date -u +'%Y%m%d-%H%M%S')-select.png"
 
 # Copy full screen screenshot to clipboard (no file saved)
 bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png
@@ -94,6 +94,16 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotoo
 
 # Copy selected region screenshot to clipboard (no file saved)
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
+
+
+# | Keybinding        | Action |
+# |-------------------|---------|
+# | Print             | Save full screen screenshot with timestamp filename |
+# | $mod+Print        | Save active window screenshot |
+# | Shift+Print       | Save selected region screenshot |
+# | Ctrl+Print        | Copy full screen to clipboard |
+# | Ctrl+$mod+Print   | Copy active window to clipboard |
+# | Ctrl+Shift+Print  | Copy selected region to clipboard |
 
 # change focus
 bindsym $mod+h focus left
