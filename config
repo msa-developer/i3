@@ -56,6 +56,9 @@ bindsym $mod+Shift+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -
 # Mute/unmute speakers with $mod+m
 bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Enabling and disabling the laptop keyboard 
+bindsym $mod+Shift+x exec "xinput disable 16"
+bindsym $mod+Shift+y exec "xinput enable 16"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
