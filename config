@@ -41,8 +41,8 @@ bindsym $mod+Shift+p exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -
 
 # Mute/unmute speakers with $mod+m
 bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-
 # Enabling and disabling the laptop keyboard 
+
 bindsym $mod+Shift+x exec "xinput disable 16"
 bindsym $mod+Shift+y exec "xinput enable 16"
 
@@ -61,6 +61,15 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+o exec --no-startup-id dmenu_run
+
+# Replace dmenu with rofi
+bindsym $mod+d exec rofi -show drun
+
+# Window switcher
+bindsym $mod+Tab exec rofi -show window
+
+# Run commands
+bindsym $mod+r exec rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
