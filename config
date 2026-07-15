@@ -10,6 +10,11 @@ font pango:DejaVu Sans Mono 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+
+# Enable screen sharing in browsers (Google Meet, etc.)
+exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk &
+exec --no-startup-id /usr/lib/xdg-desktop-portal &
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -23,8 +28,11 @@ exec --no-startup-id nm-applet
 #starting with polkit 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+# gammastep
+exec --no-startup-id gammastep -O 3500
+
 #wallpaper
-exec --no-startup-id feh --bg-scale /home/msa/.config/i3/bridge.jpg
+exec --no-startup-id feh --bg-scale /home/man/.config/i3/bridge.jpg
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -245,7 +253,7 @@ bar {
       urgent_workspacei       #2f343f #ebcb8b #2f343f
   }
   status_command i3status -c ~/.config/i3/i3status/config
-    font pango:JetBrainsMono Nerd Font Mono 15
+    font pango:DejaVuSansM Nerd Font 15
 }
 #adding for the title bar of i3 
 # target                 title     bg    text      indicator    border
